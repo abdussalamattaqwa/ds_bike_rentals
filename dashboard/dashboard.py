@@ -6,7 +6,7 @@ st.title('Dashboard Submission')
 st.header('Belajar Analisis Data dengan Python')
 
 
-day_bs_df = pd.read_csv("day.csv")
+day_bs_df = pd.read_csv("./data/day.csv")
 
 # mengubah value numerik pada kolom season menjadi string sesuai dengan definisinya
 day_bs_df['season'] = day_bs_df['season'].map({
