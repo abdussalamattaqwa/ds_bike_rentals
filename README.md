@@ -8,6 +8,16 @@ Projek ini merupakan projek submission untuk kelas "Belajar Analisis Data dengan
 - Conclusion
 
 # Cara Menjalankan Program
+## Cloning Program
+Cloning repositori ini kedalam penyimpanan lokal komputer
+```
+git clone https://github.com/abdussalamattaqwa/ds_bike_rentals.git
+```
+Buka direktori proyek
+```
+cd ds_bike_rentals
+```
+
 ## Setup environment
 ```
 conda create --name main-ds python=3.9
@@ -17,5 +27,5 @@ pip install - r requirements.txt
 
 ## Run steamlit app
 ```
-streamlit run dashboard.py
+streamlit run dashboard/dashboard.py
 ```
