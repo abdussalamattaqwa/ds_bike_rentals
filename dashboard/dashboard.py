@@ -5,6 +5,15 @@ import streamlit as st
 st.title('Dashboard Submission')
 st.header('Belajar Analisis Data dengan Python')
 
+with st.sidebar:
+    
+    st.markdown(
+        """
+        # Pengaruh season terhadap penyewaan sepeda setiap tahun
+        Submission kelas Belajar Analisis Data dengan Python
+        """
+    )
+    
 
 day_bs_df = pd.read_csv("./data/day.csv")
 
@@ -20,25 +29,28 @@ day_bs_df['yr'] = day_bs_df['yr'].map({
 # Mengubah nama kolom yr menjadi year
 day_bs_df.rename(columns={
     'yr': 'year',
+    'cnt': 'count',
 }, inplace=True)
 
 
 st.write('Tabel data penyewaan sepeda selama tahun 2011 dan 2012')
 st.write(day_bs_df)
 
+st.markdown(
+    """
+    ## Grafik tren penyewaan sepeda setiap tahun
+    """
+)
+st.bar_chart(day_bs_df, x="year", y="count")
 
 st.markdown(
     """
-
     ## Grafik tren penyewaan sepeda setiap musim
-
-
     """
 )
 
 
-
-st.bar_chart(day_bs_df, x="season", y="cnt")
+st.bar_chart(day_bs_df, x="season", y="count")
 
 st.markdown(
     """
@@ -50,5 +62,5 @@ st.markdown(
 )
 
 
-plot = sns.barplot(data=day_bs_df, x="season", y="cnt", hue="year")
+plot = sns.barplot(data=day_bs_df, x="season", y="count", hue="year")
 st.pyplot(plot.get_figure())
